@@ -61,12 +61,13 @@ class DBConnect {
             {
                 if($imageSize > 0)
                 {
+                    $imageUrl = "images/".$imageName;
                     $validImages = ["image/jpeg", "image/png", "image/jpg"];
                     if(in_array($imageType, $validImages)){
-                        $stmt = $this->db->prepare("INSERT INTO images (blog_id, image_name, image_type, image_size) VALUES (?,?,?,?)");
-                        $stmt->execute([$blogId, $imageName,$imageType,$imageSize]);
+                        $stmt = $this->db->prepare("INSERT INTO images (blog_id, image_name, image_type, image_size, image_url) VALUES (?,?,?,?,?)");
+                        $stmt->execute([$blogId, $imageName,$imageType,$imageSize, $imageUrl]);
                         if($stmt->rowCount() > 0){
-                            move_uploaded_file($imageName, "../images");
+
                             return true;
                         }else {
                             return false;

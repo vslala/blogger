@@ -1,0 +1,97 @@
+-- phpMyAdmin SQL Dump
+-- version 4.1.6
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: Apr 10, 2015 at 01:21 PM
+-- Server version: 5.6.16
+-- PHP Version: 5.5.9
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Database: `blogger`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `blogs`
+--
+
+CREATE TABLE IF NOT EXISTS `blogs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `heading` varchar(500) NOT NULL,
+  `content` varchar(3000) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+
+--
+-- Dumping data for table `blogs`
+--
+
+INSERT INTO `blogs` (`id`, `heading`, `content`, `created_at`) VALUES
+(1, 'Start is Necessary', 'Start by doing what''s necessary; then do what''s possible; and suddenly you are doing the impossible.\r\n                                                                 ', '2015-04-10 08:56:53'),
+(3, 'A cat has nine lives.', '<p><strong>A cat has nine lives.</strong> \r\n<p>\r\nThe cat is a domesticated animal and is a very sacred animal in ancient times. The Egyptian civilization considered cat as a holy animal and so it was worshipped. The maxim says that even after going into a very bad situation some people recover without much damage. \r\n\r\n<p>\r\nThe ancient saying comes from the fact that the cat is a very agile animal and can jump from very high places without getting hurt. The cat when it jumps from very high places can adjust the position of its body in such a way that it does not get hurt during its jump. This is a very distinctive feature of the cat and no other domesticated is capable of this. In ancient times people did not know that the cat can adjust its posture and jump safely. So they assumed that the cat has many lives and so when its jumps from a high position it loses one of its lives. This was referred to as a cat having nine lives in ancient times. This saying is generally used to refer to the fact that somebody escapes even after doing something wrong without being caught or punished or somebody goes to a near death situation and then survives without much bodily damage. \r\n\r\n<p><strong>\r\nA closed mouth catches no flies. \r\n</strong>\r\n<p>\r\nThis Italian proverb means that we should all be alert to grab the opportunities in our life. This proverb refers to the obvious nature of the Frog which keeps its mouth and when some insect passes close to its mouthâ€¦ the frog rolls its tongue and catches the insect. So the frog has to keep its mouth open and sit still to catch its prey. If its mouth is closed it cannot catch any fly. \r\n\r\n<p>\r\nThe real meaning of the proverb is that we should all be like the frog ever alert and ready to catch hold of any opportunity to come up in life. If we are lazy and do not make use of the opportunity to come up in life we will not succeed. It is similar to the frog keeping its mouth closed and dying of hunger. \r\n\r\n<p>\r\nNowadays we find most of the young people idle. They just indulge in unwanted activities and in criticizing others rather than involving in sincere and useful endeavor. They lose their valuable opportunities even when they come to him. Such a person experiences more disgust and despair in life. He, who keeps himself active, can make use the opportunity fully and can make his fortune instead of miring his fortune. \r\n                              ', '2015-04-10 10:34:33'),
+(4, 'A broken hand works but not a broken heart.', '                                        A bird in the hand is worth two in a bush. \r\n\r\nThis English proverb implies that we should be content with what is definitely with us than risking it for the sake of something which is not with us. It also says that those who run after plausible promises and hopes leaving the opportunities in hand. Hence one should aim higher goals only after making the maximum use of the available opportunities. \r\n\r\n<p>\r\nA bird which has been caught and is in our hand is definitely more worth than two in the bush, because the two birds are free and not yet caught. \r\n\r\n<p>\r\nThe story of the greedy dog is a good example of this proverb. In this story the dog has a bone in his mouth and walks over the river bridge and looks into the water where he sees a reflection of himself. He thinks that there is another dog with bone inside the river and jumps into the river and loses his bone in the process. So the bottom line is that we should not risk something which is already in our possession. \r\n\r\n<p>\r\nThis story tells us that we should care for what is with us at the moment and should not run after the things thinking the false promises and hopes.\r\n\r\n<p><strong>\r\nA broken hand works but not a broken heart. \r\n</strong>\r\n<p>\r\nThe Persian proverb stresses the need to keep relationships good with everybody without offending anybody. It is important not to tease our friends or relatives and offend them. This will earn us a bad name and when we a need a help from them, they will not help us. It is important not to hurt anybody in relationships. \r\n\r\n<p>\r\nThere is a story of a very rich business man who had relatives whom he always teased and made fun of. One day suddenly he incurred a heavy loss in his business and he was left penniless. None of his relatives came forward to help him even though they could. This is a typical story where some broken hearts were not ready to help him. \r\n\r\n<p>\r\nThere is a Persian story in which there lived a king and he had an army general who hated him. The army general was planning to overthrow the king and the king came to know about it from his spies and so he called a meeting of his ministers. The ministers suggested that the king should put his general in chains. The king instead called the general and talked with him and convinced him not to overthrow his empire. The general apologized to the king and said that he will be loyal to him. \r\n\r\n<p>\r\nWhen the general the ministers asked him why he did not put the general in chain, the king replied, â€œI have put his heart in chains.â€ \r\n\r\n<p>\r\nThe king with all his power could have easily put him chains. But he preferred to talk to the general and clear his problems rather than arrest him and break his heart.                                                                        ', '2015-04-10 09:52:50'),
+(5, 'A Bad Journey', 'â€œTravelling is a sort of educations among the younger peopleâ€, said Bacon. Perhaps, he had a disappointing journey in his mind. For it gives more experience and enables to develop more courage. Hazlitt, in one of his essays, says that a journey becomes enjoyable if one hopes to get a good meal and a good rest after a tiring journey, and adds that traveling hopefully gives the maximum happiness perhaps he had no experience of a disappointing journey which is more instructive. \r\n\r\n\r\nIt was a day of disappointments. And being an optimist I did not attach much importance to bad omens. First of all the auto I hired to the railway station rattled noisily and emitted more smoke than an ordinary vehicle can. But I had limited time at my disposal, so I decided to travel by it. \r\n\r\n\r\nAfter a short distance I was panting like an extremely tired person and came to a sudden stop. It was the first disappointment. Somehow I reached the station jumping into anther auto but I found a long queue at the ticket counter. There were only a few minutes for the train to leave, yet there was no hope of reaching the ticket window. This was the second disappointment. I decided to travel without ticket and pay the fare. \r\n\r\n\r\nBoarding the train was itself an ordeal. Despite my healthy body I was sandwiched and my luggage was mercilessly trampled upon. Still I managed to wriggle into a corner. There I found some persons smoking cigarettes. And I could not rather stand that smell nor could I move an inch. I covered my nose with my handkerchief, but the bad smell was choking me. \r\n\r\n\r\nAs expected the ticket checker came and I willingly told him about my inability to buy the ticket. He looked him about my inability to buy the ticket. He looked at me with strange eyes and all passengers stared at me. The ticker checker was not going to allow me to travel but I protested and told him that if a passenger was prepared to pay the fine, he could be allowed to travel. After much discussion, I convinced him and heaved a sigh of relief. \r\n\r\n\r\nAs I reached my destination, I was thanking god. I was thinking that I would meet my uncle and aunt with a broad smile and their hospitality would make me forget the ordeals of the journey. I was dreaming of it, while the rickshaw-puller was pulling the vehicle in a half sleep manner. To my great disappointment, I found that my uncle and aunt had gone to Chennai for a month and the house was locked. This was the greatest disappointment. I did not have much money for return trip. I did not want to recall this disappointing journey further because that makes me extremely sad. That was A Bad Journey.                                ', '2015-04-10 09:37:47'),
+(6, 'A Detesting Career', 'Hold your breath my friends. I am going to tell you that I hate a career for which you aspire and dream and my dislike for it. I am sure, it will compel you to hate me and dub me a stoic. These fears do not frighten me to say that I hate to be a film actor. You will surely say that there is much glamour about it. There is good money in this profession and above all it will qualify you to win elections. You will try to silence me by quoting the examples of M.G. Ramachandran, Jayalalitha, Lata, Amitabh Bachchan, Vijayantimala, Sunil Dutt, N.T. Rama Rao and above all Ronald Reagan. \r\n\r\n<p>\r\nNow before you get me all wrong, let me add that I have my own reasons to dislike it. I dislike glamour, consider it nothing else but hypocrisy and shame. Big money has no fascinations for me because it brings trouble, mental tension, baseless arrogance and what not. Only honest and hard earned money can give real satisfactions. Similarly fast jet set life does not go down with me as I prefer a quiet, tranquil life having reconciled to the type of life. \r\n\r\n<p>\r\nI do not like the working conditions of the actors. The arc lights, the murky smell of the studios and the layers of make up one has to put on repel me. I dislike fan-mail and I see no logic in going around appending my signature in everybodyâ€™s autograph-book. I shudder at the thought of being mobbed should I go out shopping. I would be most unhappy to have gossip writers write all scurrilous news about my private life. \r\n\r\n<p>\r\nI honestly feel that the actors lead a miserable life. They spend one half of it in trying to get a break and in scaling the ladder of success and the other half in coping with the onset of age and the downhill journey. Indeed there could be nothing more pathetic in life than to be a faded film actor.', '2015-04-10 10:39:03'),
+(7, 'Detesting Career', 'Hold your breath my friends. I am going to tell you that I hate a career for which you aspire and dream and my dislike for it. I am sure, it will compel you to hate me and dub me a stoic. These fears do not frighten me to say that I hate to be a film actor. You will surely say that there is much glamour about it. There is good money in this profession and above all it will qualify you to win elections. You will try to silence me by quoting the examples of M.G. Ramachandran, Jayalalitha, Lata, Amitabh Bachchan, Vijayantimala, Sunil Dutt, N.T. Rama Rao and above all Ronald Reagan. \r\n\r\n<p>\r\nNow before you get me all wrong, let me add that I have my own reasons to dislike it. I dislike glamour, consider it nothing else but hypocrisy and shame. Big money has no fascinations for me because it brings trouble, mental tension, baseless arrogance and what not. Only honest and hard earned money can give real satisfactions. Similarly fast jet set life does not go down with me as I prefer a quiet, tranquil life having reconciled to the type of life. \r\n\r\n<p>\r\nI do not like the working conditions of the actors. The arc lights, the murky smell of the studios and the layers of make up one has to put on repel me. I dislike fan-mail and I see no logic in going around appending my signature in everybodyâ€™s autograph-book. I shudder at the thought of being mobbed should I go out shopping. I would be most unhappy to have gossip writers write all scurrilous news about my private life. \r\n\r\n<p>\r\nI honestly feel that the actors lead a miserable life. They spend one half of it in trying to get a break and in scaling the ladder of success and the other half in coping with the onset of age and the downhill journey. Indeed there could be nothing more pathetic in life than to be a faded film actor.', '2015-04-10 10:41:39'),
+(8, 'sdaf', 'asdf', '2015-04-10 11:10:43');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `images`
+--
+
+CREATE TABLE IF NOT EXISTS `images` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `blog_id` int(11) NOT NULL,
+  `image_name` varchar(255) NOT NULL,
+  `image_type` varchar(255) NOT NULL,
+  `image_size` varchar(255) NOT NULL,
+  `image_url` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `images`
+--
+
+INSERT INTO `images` (`id`, `blog_id`, `image_name`, `image_type`, `image_size`, `image_url`, `created_at`) VALUES
+(1, 3, '4bf4850d694fa5d913606931d7d81637.jpg', 'image/jpeg', '7659', '', '2015-04-10 07:12:07'),
+(2, 6, '9-cool-dark-wallpaper.jpg', 'image/jpeg', '32294', '', '2015-04-10 10:39:04'),
+(3, 7, '9-cool-dark-wallpaper.jpg', 'image/jpeg', '32294', '', '2015-04-10 10:41:39'),
+(4, 8, '9-cool-dark-wallpaper.jpg', 'image/jpeg', '32294', '', '2015-04-10 11:10:43');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tags`
+--
+
+CREATE TABLE IF NOT EXISTS `tags` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `blog_id` int(11) NOT NULL,
+  `tag` varchar(100) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+
+--
+-- Dumping data for table `tags`
+--
+
+INSERT INTO `tags` (`id`, `blog_id`, `tag`, `created_at`) VALUES
+(1, 3, '#first', '2015-04-10 07:12:07'),
+(2, 3, '#second', '2015-04-10 07:12:07'),
+(3, 4, '', '2015-04-10 07:16:21'),
+(4, 5, '', '2015-04-10 07:18:15'),
+(5, 6, '#career', '2015-04-10 10:39:04'),
+(6, 6, '#detesting', '2015-04-10 10:39:04'),
+(7, 7, '', '2015-04-10 10:41:39'),
+(8, 8, 'asdf', '2015-04-10 11:10:43');
