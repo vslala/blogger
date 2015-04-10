@@ -1,4 +1,4 @@
-# [Start Bootstrap](http://startbootstrap.com/) - [Clean Blog](http://startbootstrap.com/template-overviews/clean-blog/)
+# [Blogger](http://startbootstrap.com/) - [Varun Shrivastava](http://www.facebook.com/Varun441)
 
 Its a Bloggin web application made by using PHP, MySql and BootStrap.
 
@@ -7,12 +7,11 @@ Its a Bloggin web application made by using PHP, MySql and BootStrap.
 Have a bug or an issue with this theme? [Open a new issue](https://github.com/vslala/blogger) here on GitHub
 
 ## Creator
-
 This Application was created by and is maintained by **Varun Shrivastava**, Computer Science Student at [Hitkarini College of Engineering and Technology]
 Follow me:
-Instagram : vs_lala
-facebook : www.facebook.com/Varun4441
-twitter : vslala007
+##Instagram : vs_lala
+##facebook : www.facebook.com/Varun4441
+##twitter : vslala007
 
 ## Copyright and License
 
