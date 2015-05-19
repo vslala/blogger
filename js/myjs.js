@@ -1,5 +1,5 @@
 $(document).ready(function(){ 
-    base_url = "http://localhost/blogger/";
+    base_url = "http://varunshrivastava.azurewebsites.net/";
     
     
     $("#comment_form").submit(function(event){

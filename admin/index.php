@@ -1,8 +1,9 @@
 <?php
+$base_url = "http://varunshrivastava.azurewebsites.net/";
 session_start();
 if(isset($_SESSION['username']))
 {
-    header("Location: http://localhost/blogger/admin/adminHome.php");
+    header("Location: $base_url.admin/adminHome.php");
 }
 if(isset($_POST['loginBtn']))
 {
@@ -15,7 +16,7 @@ if(isset($_POST['loginBtn']))
         {
             session_start();
             $_SESSION['username'] = $username;
-            header("Location: http://localhost/blogger/admin/adminHome.php");
+            header("Location: $base_url.admin/adminHome.php");
         }
     }
 }

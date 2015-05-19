@@ -1,7 +1,7 @@
 <?php
-
+$base_url = "http://varunshrivastava.azurewebsites.net/";
 session_start();
 session_destroy();
 
-header("Location: http://localhost/blogger/admin/index.php");
+header("Location: $base_url.admin/index.php");
 ?>
