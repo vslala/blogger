@@ -1,4 +1,5 @@
 <?php
+$base_url = "http://varunshrivastava.azurewebsites.net/";
 $blogId = null;
 $heading = null;
 $confirmation = null;
@@ -21,7 +22,7 @@ if(isset($_POST['updateBtn']))
     $flag = $db->updateBlog($blogId, $heading, $content);
     if($flag){
         $confirmation = "Blog has been update successfully!";
-        header("Refresh: 2; url=http://localhost/blogger/admin/adminHome.php");
+        header("Refresh: 2; url=".$base_url."admin/adminHome.php");
     }
         
 }

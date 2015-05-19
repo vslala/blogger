@@ -9,7 +9,7 @@ if (isset($_POST['yesBtn'])) {
     $flag = $db->deleteBlog($id);
 
     if ($flag)
-        header("Location: $base_url.admin/adminHome.php");
+        header("Location: $base_url"."admin/adminHome.php");
 }
 
 include 'auth/checkAuth.php';
