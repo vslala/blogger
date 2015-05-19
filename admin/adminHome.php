@@ -6,6 +6,9 @@ include 'layout/_header.php';
 require 'php/DBConnect.php';
 $db = new DBConnect();
 $blogs = $db->fetchAllBlogs();
+$notifications = $db->getNotification();
+$totalNotifications = count($notifications);
+
 ?>
 
 <div class="container">

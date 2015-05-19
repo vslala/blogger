@@ -7,10 +7,10 @@
 class DBConnect {
      private $db = NULL;
 
-    const DB_SERVER = "localhost";
-    const DB_USER = "root";
-    const DB_PASSWORD = "";
-    const DB_NAME = "blogger";
+    const DB_SERVER = "ap-cdbr-azure-east-c.cloudapp.net";
+    const DB_USER = "b9ebb4837a6198";
+    const DB_PASSWORD = "09653ffb";
+    const DB_NAME = "bloggerdb";
 
     public function __construct() {
         $dsn = 'mysql:dbname=' . self::DB_NAME . ';host=' . self::DB_SERVER;
@@ -119,5 +119,112 @@ class DBConnect {
         $stmt = $this->db->prepare("DELETE FROM blogs WHERE id=? ");
         $stmt->execute([$id]);
         return true;
+    }
+    
+//    public function updateAboutMe($id,$content){
+//        $stmt = $this->db->prepare("UPDATE about SET about_me=? WHERE id=?");
+//        if($stmt->execute([$content, $id])){
+//            return true;
+//        }else{
+//            return false;
+//        }
+//    }
+//    
+//    private function insertIntoAboutMe($content){
+//        $stmt = $this->db->prepare("INSERT INTO about (about_me) VALUES (?)");
+//            if($stmt->execute([$content])){
+//                return true;
+//            }else{
+//                return false;
+//            }
+//    }
+//
+//
+//    public function insertAboutMe($id,$content){
+//        $flag = $this->checkAboutInsert();      
+//        if($flag){
+//            return $this->insertIntoAboutMe($content);
+//        }else{
+//            return $this->updateAboutMe($id,$content);          
+//        }
+//             
+//    }
+//    
+    public function selectAllFromAbout(){
+        $stmt = $this->db->prepare("SELECT * FROM about");
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+//
+//    public function checkAboutInsert(){
+//        $stmt = $this->db->prepare("SELECT * FROM about");
+//        $stmt->execute();
+//        if(count($stmt->fetchAll()) <= 0){
+//            return true;
+//        }else {
+//            return false;
+//        }
+//    }
+    
+    public function updateAboutMe($id,$content){
+        $stmt = $this->db->prepare("SELECT * FROM about");
+        $stmt->execute();
+        $count = count($stmt->fetchAll());
+        
+        if($count<=0){
+            $stmt = $this->db->prepare("INSERT INTO about (about_me) VALUES (?)");
+            $flag = $stmt->execute();
+            if($flag)
+                return true;
+            else
+                return false;
+        } else{
+            $stmt = $this->db->prepare("UPDATE about SET about_me=? WHERE id=?");
+            $flag = $stmt->execute([$content,$id]);
+            if($flag){
+                return true;
+            }else{
+                return false;
+            }
+        }
+    }
+    
+    public function insertComment($blogID, $comment,$username){
+        $stmt = $this->db->prepare("INSERT INTO comments (blog_id,comment,username) VALUES (?,?,?)");
+        if($stmt->execute([$blogID,$comment,$username])){
+            return true;
+        }else{
+            return $this->db->errorInfo();
+        }
+    }
+    
+    public function getCommentsByBlogID($blogID){
+        $stmt = $this->db->prepare("SELECT * FROM comments WHERE blog_id=?");
+        if($stmt->execute([$blogID])){
+            return $stmt->fetchAll();
+        }else{
+            return $this->db->errorInfo();
+        }
+    }
+    
+    public function setNotificationForComment($blogID,$username){
+        $stmt = $this->db->prepare("INSERT INTO notifications (blog_id, username) VALUES(?,?)");
+        if($stmt->execute([$blogID, $username]))
+                return true;
+        else
+            return $this->db->errorInfo();
+    }
+    
+    public function getNotification(){
+        $stmt = $this->db->prepare("SELECT * FROM notifications");
+        if($stmt->execute())
+            return $stmt->fetchAll();
+        else
+            return $this->db->errorInfo ();
+    }
+    
+    public function deleteNotificationByBlogID($blogID){
+        $stmt = $this->db->prepare("DELETE FROM notifications WHERE blog_id=?");
+        $stmt->execute([$blogID]);
     }
 }

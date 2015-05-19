@@ -40,7 +40,7 @@ $count = $addCount;
             <?php if (isset($blogs)): ?>
                 <?php foreach ($blogs as $b): ?>
                     <div class="post-preview">
-                        <a href="post.php?id=<?= $b['id']; ?>">
+                        <a href="post.php?id=<?= $b['id']; ?>&blog=<?= $b['heading']; ?>">
                             <h2 class="post-title">
                                 <?= $b['heading']; ?>
                             </h2>

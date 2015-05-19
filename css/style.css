@@ -1,0 +1,23 @@
+.username-text{
+    font-family: tahoma, sans-serif;
+    font-size: medium;
+    font-weight: 500;
+}
+
+.comment-text{
+    font-family: tahoma,sans-serif;
+    font-size: small;
+    font-weight: 400;
+}
+
+.time{
+    font-family: tahoma,sans-serif;
+    font-size: xx-small;
+    font-weight: 400;
+}
+
+.comment-group{
+    /*border: 2px solid gray;*/
+    padding: 5px;
+    margin-bottom: 5px;
+}

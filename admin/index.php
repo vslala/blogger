@@ -10,8 +10,8 @@ if(isset($_POST['loginBtn']))
     $password = $_POST['password'];
     
     
-    if($username == "akshita"){
-        if($password == "123")
+    if($username == "vs_lala"){
+        if($password == "ucanthackitbuddy")
         {
             session_start();
             $_SESSION['username'] = $username;

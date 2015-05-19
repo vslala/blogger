@@ -2,10 +2,10 @@
 $title = "Compose Blog"; $setComposeActive = "active";
 
  if (isset($_POST['saveBtn'])) {
-     $imageName = $_FILES['file']['name'];
-     $imageType = $_FILES['file']['type'];
-     $imageSize = $_FILES['file']['size'];
-     $imageTmp  = $_FILES['file']['tmp_name'];
+//     $imageName = $_FILES['file']['name'];
+//     $imageType = $_FILES['file']['type'];
+//     $imageSize = $_FILES['file']['size'];
+//     $imageTmp  = $_FILES['file']['tmp_name'];
      $heading = $_POST['heading'];
      $content = $_POST['content'];
      $tags = $_POST['tags'];
@@ -50,15 +50,15 @@ include 'layout/_header.php';
                             <div class="form-group">
                                 <label class="form-label col-md-4">Content:</label>
                                 <div class="col-md-8">
-                                    <textarea rows="10" name="content" class="form-control" maxlength="3000" ></textarea>
+                                    <textarea rows="15" name="content" class="form-control" maxlength="3000" ></textarea>
                                 </div>
                             </div>
-                            <div class="form-group">
+<!--                            <div class="form-group">
                                 <label class="form-label col-md-4">Image:</label>
                                 <div class="col-md-8">
                                     <input type="file" name="file" class="form-control">
                                 </div>
-                            </div>
+                            </div>-->
                             <div class="form-group">
                                 <label class="form-label col-md-4">Tags: </label>
                                 <div class="col-md-8">
