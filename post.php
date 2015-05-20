@@ -1,4 +1,5 @@
 <?php
+session_start();
 $id = $_GET['id'];
 require_once 'admin/php/DBConnect.php';
 $db = new DBConnect();
@@ -53,6 +54,9 @@ include 'layout/_top_nav.php';
                 </div>
                 <div class="row">
                     <div class="col-md-6 comment-text"><?= $c['comment']; ?></div>
+                    <?php if(isset($_SESSION['username'])): ?>
+                    <span class="time"><a href="postAjax.php?id=<?= $c['id']; ?>&delete=1" id="deleteComment">delete</a></span>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>

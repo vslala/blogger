@@ -34,4 +34,23 @@ $(document).ready(function(){
             }
         });
     });
+    
+    $("body").on("click","#deleteComment",function(event){
+        event.preventDefault();
+        var url=$(this).attr("href");
+        
+        $.ajax({
+            url : url,
+            type : 'GET',
+            success : function(data){
+                $(this).parent().remove();
+                console.log($(this).parent().attr("class"));
+            },
+            error : function(xhr,status,message){
+                console.log(xhr.responseText);
+                alert("ERROR: ");
+            }
+            
+        })
+    })
 });

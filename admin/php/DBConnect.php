@@ -227,4 +227,9 @@ class DBConnect {
         $stmt = $this->db->prepare("DELETE FROM notifications WHERE blog_id=?");
         $stmt->execute([$blogID]);
     }
+    
+    public function deleteBlogCommentWithId($id){
+        $stmt = $this->db->prepare("DELETE FROM comments WHERE id=?");
+        $stmt->execute([$id]);
+    }
 }
