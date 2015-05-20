@@ -5,6 +5,11 @@
     $id = $_GET['id'];
     $delete = $_GET['delete'];
     
-    $db->deleteBlogCommentWithId($id);
+    $flag = $db->deleteBlogCommentWithId($id);
     
+    if($flag){
+        echo $flag;
+    }else{
+        echo $flag;
+    }
     ?>

@@ -230,6 +230,9 @@ class DBConnect {
     
     public function deleteBlogCommentWithId($id){
         $stmt = $this->db->prepare("DELETE FROM comments WHERE id=?");
-        $stmt->execute([$id]);
+        if($stmt->execute([$id]))
+            return true;
+        else
+            return $this->db->errorInfo ();
     }
 }
