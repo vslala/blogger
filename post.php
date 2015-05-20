@@ -55,7 +55,7 @@ include 'layout/_top_nav.php';
                 <div class="row">
                     <div class="col-md-6 comment-text"><?= $c['comment']; ?></div>
                     <?php if(isset($_SESSION['username'])): ?>
-                    <span class="time"><a href="postAjax.php?id=<?= $c['id']; ?>&delete=1" id="deleteComment">delete</a></span>
+                    <span class="time"><a href="deleteAjax.php?id=<?= $c['id']; ?>&delete=1" id="deleteComment">delete</a></span>
                     <?php endif; ?>
                 </div>
             </div>
