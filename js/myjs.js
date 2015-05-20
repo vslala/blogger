@@ -38,13 +38,13 @@ $(document).ready(function(){
     $("body").on("click","#deleteComment",function(event){
         event.preventDefault();
         var url=$(this).attr("href");
+        var deleteComment = $(this).parent().parent();
         
         $.ajax({
             url : url,
             type : 'GET',
             success : function(data){
-                $(this).parent().remove();
-                console.log($(this).parent().parent().attr("class"));
+                $(deleteComment).remove();
             },
             error : function(xhr,status,message){
                 console.log(xhr.responseText);
