@@ -15,7 +15,7 @@ $title = "Compose Blog"; $setComposeActive = "active";
     $flag = $db->createBlog($heading, $content, $tags, $imageName, $imageType, $imageSize);
     if ($flag) {
         $confirmation = "The blog has been inserted in the database successufully!";
-        move_uploaded_file($imageTmp, "../images/". basename($imageName));
+//        move_uploaded_file($imageTmp, "../images/". basename($imageName));
     }
 }
 

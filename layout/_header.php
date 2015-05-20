@@ -20,7 +20,7 @@
         <!-- Latest compiled JavaScript -->
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
         
-        <script src="/blogger/js/myjs.js"></script>
+        <script src="js/myjs.js"></script>
         <link rel="shortcut icon" href="http://cdn0.vox-cdn.com/images/verge/2.0/verge-icon-196x196.v503bbf1.png" />
         <!-- Bootstrap Core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">

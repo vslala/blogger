@@ -39,7 +39,7 @@ class DBConnect {
                 }
             }
             
-            $flag = $this->insertBlogImage($blogId, $imageName, $imageType, $imageSize);
+//            $flag = $this->insertBlogImage($blogId, $imageName, $imageType, $imageSize);
             
         } else {
             return false;
@@ -53,30 +53,30 @@ class DBConnect {
         
     }
     
-    public function insertBlogImage($blogId, $imageName, $imageType, $imageSize)
-    {
-        if($blogId)
-        {
-            if($imageName !== null)
-            {
-                if($imageSize > 0)
-                {
-                    $imageUrl = "images/".$imageName;
-                    $validImages = ["image/jpeg", "image/png", "image/jpg"];
-                    if(in_array($imageType, $validImages)){
-                        $stmt = $this->db->prepare("INSERT INTO images (blog_id, image_name, image_type, image_size, image_url) VALUES (?,?,?,?,?)");
-                        $stmt->execute([$blogId, $imageName,$imageType,$imageSize, $imageUrl]);
-                        if($stmt->rowCount() > 0){
-
-                            return true;
-                        }else {
-                            return false;
-                        }
-                    } else { return "Invalid File Type"; }
-                } else return false;
-            } else return false;
-        } else return false;
-    }
+//    public function insertBlogImage($blogId, $imageName, $imageType, $imageSize)
+//    {
+//        if($blogId)
+//        {
+//            if($imageName !== null)
+//            {
+//                if($imageSize > 0)
+//                {
+//                    $imageUrl = "images/".$imageName;
+//                    $validImages = ["image/jpeg", "image/png", "image/jpg"];
+//                    if(in_array($imageType, $validImages)){
+//                        $stmt = $this->db->prepare("INSERT INTO images (blog_id, image_name, image_type, image_size, image_url) VALUES (?,?,?,?,?)");
+//                        $stmt->execute([$blogId, $imageName,$imageType,$imageSize, $imageUrl]);
+//                        if($stmt->rowCount() > 0){
+//
+//                            return true;
+//                        }else {
+//                            return false;
+//                        }
+//                    } else { return "Invalid File Type"; }
+//                } else return false;
+//            } else return false;
+//        } else return false;
+//    }
     
     public function fetchAllBlogs()
     {
