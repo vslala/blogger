@@ -44,7 +44,7 @@ $(document).ready(function(){
             type : 'GET',
             success : function(data){
                 $(this).parent().remove();
-                console.log($(this).parent().attr("class"));
+                console.log($(this).parent().parent().attr("class"));
             },
             error : function(xhr,status,message){
                 console.log(xhr.responseText);
