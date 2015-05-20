@@ -71,7 +71,7 @@ include 'layout/_top_nav.php';
                 </div>
                 <div class="panel-body">
                     <div class="form-group">
-                        <input type="text" placeholder="Name" id="username" name="username" required="true" class="form-control" />
+                        <input type="text" placeholder="Name" id="username" name="username" required="true" class="form-control" minlength="3"/>
                     </div>
                     <div class="form-group">
                         <textarea class="form-control" rows="4" id="comment_box" name="comment" required="true" minlength="5"></textarea>
