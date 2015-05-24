@@ -57,7 +57,7 @@ include 'layout/_header.php';
                             <div class="form-group">
                                 <label class="form-label col-md-4">Content:</label>
                                 <div class="col-md-8">
-                                    <textarea rows="10" name="content" class="form-control" maxlength="3000" >
+                                    <textarea rows="10" name="content" class="form-control" maxlength="30000" >
                                         <?php if(isset($content)) echo $content; else echo ''; ?>
                                     </textarea>
                                 </div>

@@ -50,7 +50,7 @@ include 'layout/_header.php';
                             <div class="form-group">
                                 <label class="form-label col-md-4">Content:</label>
                                 <div class="col-md-8">
-                                    <textarea rows="15" name="content" class="form-control" maxlength="3000" ></textarea>
+                                    <textarea rows="15" name="content" class="form-control" maxlength="30000" ></textarea>
                                 </div>
                             </div>
 <!--                            <div class="form-group">

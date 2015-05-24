@@ -39,7 +39,7 @@ $(document).ready(function(){
         event.preventDefault();
         var url=$(this).attr("href");
         var deleteComment = $(this).parent().parent().parent().parent();
-        $(deleteComment).html('<img src="http://www.srisangworn.go.th/loading.gif" class="img img-responsive" style="height: 100px;"/>');
+        $(deleteComment).html('<img src="http://www.srisangworn.go.th/loading.gif" class="img img-responsive img-rounded" style="height: 100px;"/>');
         
         $.ajax({
             url : url,
