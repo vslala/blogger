@@ -7,6 +7,9 @@ $projects = $db->fetchAllProjects();
 include 'layout/_header.php';
 
 ?>
+<script>
+
+</script>
 
 <div class="container">
 	<?php include 'layout/_top_nav.php'; ?>
@@ -40,26 +43,6 @@ include 'layout/_header.php';
 	</div>
 </div>
 
-<script>
-$(document).ready(function(){
-	$("body").on("click", "#project_delete", function(event){
-		event.preventDefault();
-		var url = $(this).attr("href");
-		var parentPanel = $(this).parent().parent();
 
-		$.ajax({
-			type : "GET",
-			url : url,
-			success: function(data){
-					$(parentPanel).remove();
-					$("#danger_div").html(data);
-			},
-			error : function(xhr,status,message){
-					alert(xhr.responseText);
-			}
-		});
-	});
-});
-</script>
 
 <?php include 'layout/_footer.php'; ?>
