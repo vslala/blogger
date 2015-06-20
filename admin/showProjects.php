@@ -4,6 +4,9 @@ require_once 'php/DBConnect.php';
 $db = new DBConnect();
 $projects = $db->fetchAllProjects();
 
+// scripts is the array defined in the header which goes through all the links mentioned in the array and connects it to the src
+$scripts = ["https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js", "../admin/js/myjs.js"];
+
 include 'layout/_header.php';
 
 ?>

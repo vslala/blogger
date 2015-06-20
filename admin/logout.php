@@ -1,7 +1,9 @@
 <?php
-$base_url = "http://varunshrivastava.azurewebsites.net/";
+require_once "php/Values.php";
+$v = new Values();
+$admin_login = $v->getAdminLoginUrl();
 session_start();
 session_destroy();
 
-header("Location: $base_url"."admin/index.php");
+header("Location: $admin_login");
 ?>
