@@ -7,9 +7,12 @@
 class DBConnect {
      private $db = NULL;
 
-    const DB_SERVER = "ap-cdbr-azure-east-c.cloudapp.net";
-    const DB_USER = "b9ebb4837a6198";
-    const DB_PASSWORD = "09653ffb";
+     const DB_SERVER = "localhost";
+     const DB_USER = "root";
+     const DB_PASSWORD = "";
+    // const DB_SERVER = "ap-cdbr-azure-east-c.cloudapp.net";
+    // const DB_USER = "b9ebb4837a6198";
+    // const DB_PASSWORD = "09653ffb";
     const DB_NAME = "bloggerdb";
 
     public function __construct() {
@@ -234,5 +237,52 @@ class DBConnect {
             return true;
         else
             return $this->db->errorInfo ();
+    }
+
+    public function addProject($title, $link, $description){
+        $stmt = $this->db->prepare("INSERT INTO projects (title,link,description) VALUES (?,?,?)");
+        $flag = $stmt->execute([$title,$link,$description]);
+        if($flag){
+            return true;
+        } else{
+            return $this->db->errorInfo();
+        }
+    }
+
+    public function fetchAllProjects(){
+        $stmt = $this->db->prepare("SELECT * FROM projects");
+        $flag = $stmt->execute();
+        if($flag){
+            return $stmt->fetchAll();
+        }
+    }
+
+    public function fetchProjectById($id){
+        $stmt = $this->db->prepare("SELECT * FROM projects WHERE id=?");
+        $flag = $stmt->execute([$id]);
+        if($flag){
+            return $stmt->fetchAll();
+        }
+    }
+
+    public function editProject($title, $link, $description, $id){
+        $stmt = $this->db->prepare("UPDATE projects SET title=?, link=?, description=? WHERE id=?");
+        $flag = $stmt->execute([$title,$link,$description,$id]);
+        if($flag){
+            return true;
+        } else{
+            return $this->db->errorInfo();
+        }
+    }
+
+    public function deleteProjectById($id){
+        $stmt = $this->db->prepare("DELETE FROM projects WHERE id=? ");
+        $flag = $stmt->execute([$id]);
+
+        if($flag){
+            return true;
+        } else{
+            return $this->db->errorInfo();
+        }
     }
 }

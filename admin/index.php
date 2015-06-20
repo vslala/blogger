@@ -1,9 +1,12 @@
 <?php
-$base_url = "http://varunshrivastava.azurewebsites.net/";
+require_once 'php/Values.php';
+$values = new Values();
+$admin_home = $values->getAdminHomeUrl();
+
 session_start();
 if(isset($_SESSION['username']))
 {
-    header("Location: ".$base_url."admin/adminHome.php");
+    header("Location: ".$admin_home);
 }
 if(isset($_POST['loginBtn']))
 {
@@ -16,7 +19,7 @@ if(isset($_POST['loginBtn']))
         {
             session_start();
             $_SESSION['username'] = $username;
-            header("Location: ".$base_url."admin/adminHome.php");
+            header("Location: ".$admin_home);
         }
     }
 }

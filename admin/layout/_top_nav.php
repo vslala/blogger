@@ -2,6 +2,7 @@
 <nav class="nav navbar navbar-fixed-top">
     <ul class="nav nav-pills pull-right">
         <li class="<?php echo $setHomeActive; ?>"><a href="adminHome.php">Home</a></li>
+        <li class="<?php echo $setProjectsActive; ?>"><a href="addProject.php">Projects</a></li>
         <li class="<?php echo $setAboutActive; ?>"><a href="about.php">About</a></li>
         <li class="<?php echo $setComposeActive; ?>"><a href="compose.php">Compose</a></li>
         <li class="<?php echo $setNotificationActive; ?>">
