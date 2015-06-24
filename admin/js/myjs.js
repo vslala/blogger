@@ -16,4 +16,24 @@ $(document).ready(function(){
 			}
 		});
 	});
+
+	// $("#blog_compose_form").submit(function(event){
+	// 	event.preventDefault();
+
+	// 	var url = $(this).attr("action");
+	// 	var data = $(this).serialize();
+
+	// 	$.ajax({
+	// 		url : url,
+	// 		type : "POST",
+	// 		data : data,
+	// 		success : function(data){
+	// 			console.log(data);
+	// 		},
+	// 		error : function(xhr,status,msg){
+	// 			console.log(xhr.responseText);
+	// 		}
+	// 	});
+	// });
+
 });

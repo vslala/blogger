@@ -21,3 +21,19 @@
     padding: 5px;
     margin-bottom: 5px;
 }
+#scroll_bar{
+    overflow-y: scroll;
+    max-height: 20em;
+}
+
+.project-nav{
+    border: 2px solid gray;
+    padding: 2em;
+}
+.clear-fix{
+
+}
+.pDescription{
+    font-family: tahoma;
+    font-size: small;
+}

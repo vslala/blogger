@@ -18,3 +18,13 @@
 	border-top: 2px solid gray;
 	border-bottom: 2px solid black;
 }
+.text-editor{
+	display: none;
+}
+.iframe{
+	width: 30em;
+	height: 10em;
+}
+.output-div{
+	border: 1px solid gray;
+}

@@ -1,5 +1,6 @@
 <?php
 $title = "Compose Blog"; $setComposeActive = "active";
+$scripts = ["https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js","js/wysiwyg.js", "js/myjs.js"];
 
  if (isset($_POST['saveBtn'])) {
 //     $imageName = $_FILES['file']['name'];
@@ -15,6 +16,7 @@ $title = "Compose Blog"; $setComposeActive = "active";
     $flag = $db->createBlog($heading, $content, $tags, $imageName, $imageType, $imageSize);
     if ($flag) {
         $confirmation = "The blog has been inserted in the database successufully!";
+        echo $confirmation;
 //        move_uploaded_file($imageTmp, "../images/". basename($imageName));
     }
 }
@@ -23,6 +25,7 @@ $title = "Compose Blog"; $setComposeActive = "active";
 include 'auth/checkAuth.php';
 include 'layout/_header.php';
 ?>
+
 <div class="container">
     <?php    include 'layout/_top_nav.php'; ?>
     
@@ -50,7 +53,9 @@ include 'layout/_header.php';
                             <div class="form-group">
                                 <label class="form-label col-md-4">Content:</label>
                                 <div class="col-md-8">
-                                    <textarea rows="15" name="content" class="form-control" maxlength="30000" ></textarea>
+                                  
+                                    <textarea id="text_editor" class="text-editor" rows="10" cols="48" name="content"maxlength="30000" ></textarea>
+
                                 </div>
                             </div>
 <!--                            <div class="form-group">

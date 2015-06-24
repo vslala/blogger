@@ -10,7 +10,7 @@
     <meta name="author" content="">
 
     <title><?php echo $title; ?></title>
-
+    <script type="text/javascript" src=""></script>
     
     <!-- Bootstrap Core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -34,11 +34,18 @@
     <script src="../admin/js/myjs.js"></script>-->
 
     <?php
+        if(isset($styles)){
+            for($i=0;$i<count($styles);$i++){
+                echo '<link href="'.$styles[$i].'" rel="stylesheet" type="text/css" />';
+            }
+        }
+
         if(isset($scripts)){
             for($i=0;$i<count($scripts);$i++){
                 echo '<script src="'.$scripts[$i].'"></script>';
             }
         }
+
     ?>
 </head>
 
