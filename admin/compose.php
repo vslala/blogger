@@ -16,7 +16,7 @@ $scripts = ["https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js","
     $flag = $db->createBlog($heading, $content, $tags);
     if ($flag) {
         $confirmation = "The blog has been inserted in the database successufully!";
-        echo $confirmation;
+        // echo $confirmation;
 //        move_uploaded_file($imageTmp, "../images/". basename($imageName));
     }
 }
