@@ -13,7 +13,7 @@ $scripts = ["https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js","
     require_once 'php/DBConnect.php';
 
     $db = new DBConnect();
-    $flag = $db->createBlog($heading, $content, $tags, $imageName, $imageType, $imageSize);
+    $flag = $db->createBlog($heading, $content, $tags);
     if ($flag) {
         $confirmation = "The blog has been inserted in the database successufully!";
         echo $confirmation;
@@ -73,7 +73,7 @@ include 'layout/_header.php';
                             <div class="form-group">
                                 <label class="form-label col-md-4"></label>
                                 <div class="col-md-8">
-                                    <button type="submit" class="btn btn-success" name="saveBtn">Save</button>
+                                    <button type="submit" onclick="parseText()" class="btn btn-success" name="saveBtn">Save</button>
                                 </div>
                             </div>
                         </form>

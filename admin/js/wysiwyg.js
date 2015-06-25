@@ -1,15 +1,15 @@
 $(document).ready(function(){
     $('#text_editor').wrap("<div id='wrapper'></div>");
     $('#wrapper').prepend('<div class="button-group">'+
-                        '<button id="bold_btn" onclick="iBold()" class="btn btn-default"><span class="glyphicon glyphicon-bold"></span></button>'+
-                        '<button id="italic_btn" onclick="iItalic()" class="btn btn-default"><span class="glyphicon glyphicon-italic"></span></button>'+
-                        '<button id="bold_btn" onclick="iUnderline()" class="btn btn-default"><b><u>U</u></b></button>'+
-                        '<button id="bold_btn" onclick="iColor()" class="btn btn-default"><span class="glyphicon glyphicon-text-color"></span></button>'+
-                        '<button id="bold_btn" onclick="iFontSize()" class="btn btn-default"><b>Font Size</b></button>'+
-                        '<button id="bold_btn" onclick="createLink()" class="btn btn-default"><b>Create Link</b></button>'+
-                        '<button id="bold_btn" onclick="iUnlink()" class="btn btn-default"><b>Unlink</b></button>'+                    
-                        '<button id="Preview" onclick="insertImage()" class="btn btn-default"><span class="glyphicon glyphicon-picture"></span></button>'+
-                        '<button type="button" id="Preview" onclick="parseText()" class="btn btn-default">Preview</button>'+
+                        '<button type="button" id="bold_btn" onclick="iBold()" class="btn btn-default"><span class="glyphicon glyphicon-bold"></span></button>'+
+                        '<button type="button" id="italic_btn" onclick="iItalic()" class="btn btn-default"><span class="glyphicon glyphicon-italic"></span></button>'+
+                        '<button type="button" id="bold_btn" onclick="iUnderline()" class="btn btn-default"><b><u>U</u></b></button>'+
+                        '<button type="button" id="bold_btn" onclick="iColor()" class="btn btn-default"><span class="glyphicon glyphicon-text-color"></span></button>'+
+                        '<button type="button" id="bold_btn" onclick="iFontSize()" class="btn btn-default"><b>Font Size</b></button>'+
+                        '<button type="button" id="bold_btn" onclick="createLink()" class="btn btn-default"><b>Create Link</b></button>'+
+                        '<button type="button" id="bold_btn" onclick="iUnlink()" class="btn btn-default"><b>Unlink</b></button>'+                    
+                        '<button type="button" id="Preview" onclick="insertImage()" class="btn btn-default"><span class="glyphicon glyphicon-picture"></span></button>'+
+                        '<button type="button" type="button" id="Preview" onclick="parseText()" class="btn btn-default">Preview</button>'+
                     '</div>');
     $('#wrapper').append('<iframe id="richTextField" class="iframe"></iframe>');
     $('#wrapper').append('<div class="output-div" id="output_div"></div>');
@@ -62,6 +62,5 @@ function parseText(){
     console.log("Entered");
     var text = document.getElementById('richTextField').contentWindow.document.body.innerHTML;
     document.getElementById('text_editor').value = text;
-    console.log(document.getElementById('text_editor').value);
     $('#output_div').html(text);
 }
