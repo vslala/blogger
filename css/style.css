@@ -37,3 +37,10 @@
     font-family: tahoma;
     font-size: small;
 }
+.box{
+    padding: 10px;
+    font: tahoma;
+    font-family: tahoma;
+    font-size: small;
+    font-weight: bold;
+}

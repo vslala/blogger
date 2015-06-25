@@ -281,4 +281,26 @@ class DBConnect {
             return $this->db->errorInfo();
         }
     }
+
+    public function incrementBlogCount($id){
+        $stmt = $this->db->prepare("SELECT `views` FROM blogs WHERE id=?");
+        $stmt->execute([$id]);
+        $result = $stmt->fetchColumn();
+        if($result == NULL){
+            $stmt = $this->db->prepare("UPDATE blogs SET views=1 WHERE id=?");
+            $flag = $stmt->execute([$id]);
+            if($flag){
+                return true;
+            }
+        }
+
+        $stmt = $this->db->prepare("UPDATE blogs SET views=views+1 WHERE id=?");
+        $flag = $stmt->execute([$id]);
+        if($flag){
+            return true;
+        }else{
+            return $this->db->errorInfo();
+        }
+        
+    }
 }

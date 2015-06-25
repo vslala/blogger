@@ -3,6 +3,7 @@ session_start();
 $id = $_GET['id'];
 require_once 'admin/php/DBConnect.php';
 $db = new DBConnect();
+$db->incrementBlogCount($id);
 $blog = $db->getBlogById($id);
 $comments = $db->getCommentsByBlogID($id);
 $db->deleteNotificationByBlogID($id);
@@ -33,8 +34,17 @@ include 'layout/_top_nav.php';
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <?= $blog[0]['content']; ?>
             </div>
+
         </div>
+        <hr>
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="pull-left box">Total Blog Views: <?= $blog[0]['views']; ?></div>
+            </div>
+        </div>
+        <hr>
     </div>
+    
 </article>
 
 <hr>
