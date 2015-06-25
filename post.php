@@ -3,7 +3,8 @@ session_start();
 $id = $_GET['id'];
 require_once 'admin/php/DBConnect.php';
 $db = new DBConnect();
-$db->incrementBlogCount($id);
+if(!isset($_SESSION['username']))
+    $db->incrementBlogCount($id);
 $blog = $db->getBlogById($id);
 $comments = $db->getCommentsByBlogID($id);
 $db->deleteNotificationByBlogID($id);
