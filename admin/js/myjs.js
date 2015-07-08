@@ -37,3 +37,11 @@ $(document).ready(function(){
 	// });
 
 });
+
+function previewText(){
+    var text = $("#about").val();
+    console.log(text);
+//    text = $.parseHTML(text);
+//        console.log(text[0].data);
+    $("#preview_pane").html("<p>"+text+"</p>");
+}

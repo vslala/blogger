@@ -1,4 +1,6 @@
 <?php
+$scripts = ["https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js","js/myjs.js"];
+$title = "About Edit";
 $setAboutActive="active";
 
 require 'php/DBConnect.php';
@@ -46,6 +48,7 @@ include 'layout/_header.php';
             <?php endif; ?>
             
             <section class="about-edit">
+                <button class="btn btn-default" type="button" onclick="previewText()" id="preview_button">Preview</button>
                 <form class="form-vertical" role="form" method="POST" action="about.php" id="about_edit_form">
                     <input type="hidden" name="blog_id" value="<?php if(isset($about[0])){echo $about[0]['id']; }else{ echo ''; } ?>" >
                     <div class="form-group">
@@ -55,6 +58,12 @@ include 'layout/_header.php';
                         <input type="submit" name="aboutSubmit" class="btn btn-md btn-primary" value="Update" id="submitBtn" />
                     </div>
                 </form>
+                <hr>
+                <div class="form-group">
+                    <div class="preview" id="preview_pane" contenteditable="true">
+                        
+                    </div>
+                </div>
             </section>
         </div>
         <div class="col-md-1"></div>
