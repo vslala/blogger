@@ -1,5 +1,5 @@
 <?php
-$scripts = ["css/clean-blog.min.css"];
+
 $count = 0;
 if(isset($_GET['count']))
 {

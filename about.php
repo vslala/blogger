@@ -1,5 +1,5 @@
 <?php 
-$scripts = ["css/clean-blog.min.css"];
+
 $title = "About";
 $bgImageUrl = null;
 include 'layout/_header.php';
