@@ -26,7 +26,6 @@
         <link href="css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Custom CSS -->
-        <link href="css/clean-blog.min.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet" />
 
         <!-- Custom Fonts -->
@@ -35,6 +34,20 @@
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
         <link href="css/style.css" rel="stylesheet" type="text/css" />
 
+        <?php
+        if(isset($styles)){
+            for($i=0;$i<count($styles);$i++){
+                echo '<link href="'.$styles[$i].'" rel="stylesheet" type="text/css" />';
+            }
+        }
+
+        if(isset($scripts)){
+            for($i=0;$i<count($scripts);$i++){
+                echo '<script src="'.$scripts[$i].'"></script>';
+            }
+        }
+
+    ?>
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

@@ -16,7 +16,6 @@
     <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="../css/clean-blog.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet" />
 
     <!-- Custom Fonts -->
