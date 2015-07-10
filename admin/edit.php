@@ -1,4 +1,5 @@
 <?php
+$scripts = ["https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js","http://cdn.ckeditor.com/4.5.1/full/ckeditor.js", "js/myjs.js"];
 $base_url = "http://varunshrivastava.azurewebsites.net/";
 $blogId = null;
 $heading = null;
@@ -57,7 +58,7 @@ include 'layout/_header.php';
                             <div class="form-group">
                                 <label class="form-label col-md-4">Content:</label>
                                 <div class="col-md-8">
-                                    <textarea rows="10" name="content" class="form-control" maxlength="30000" >
+                                    <textarea rows="10" name="content" class="form-control" maxlength="30000" id="text_editor">
                                         <?php if(isset($content)) echo $content; else echo ''; ?>
                                     </textarea>
                                 </div>

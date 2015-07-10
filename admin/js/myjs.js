@@ -15,7 +15,10 @@ $(document).ready(function(){
 					alert(xhr.responseText);
 			}
 		});
+                
+     
 	});
+
 
 	// $("#blog_compose_form").submit(function(event){
 	// 	event.preventDefault();
@@ -35,7 +38,7 @@ $(document).ready(function(){
 	// 		}
 	// 	});
 	// });
-
+CKEDITOR.replace('content');
 });
 
 function previewText(){

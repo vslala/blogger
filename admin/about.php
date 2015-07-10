@@ -1,5 +1,5 @@
 <?php
-$scripts = ["https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js","js/myjs.js"];
+$scripts = ["https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js","http://cdn.ckeditor.com/4.5.1/full/ckeditor.js", "js/myjs.js"];
 $title = "About Edit";
 $setAboutActive="active";
 

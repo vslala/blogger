@@ -1,7 +1,6 @@
 <?php
 $title = "Compose Blog"; $setComposeActive = "active";
-$scripts = ["https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js","js/wysiwyg.js", "js/myjs.js"];
-
+$scripts = ["https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js","http://cdn.ckeditor.com/4.5.1/full/ckeditor.js", "js/myjs.js"];
  if (isset($_POST['saveBtn'])) {
 //     $imageName = $_FILES['file']['name'];
 //     $imageType = $_FILES['file']['type'];
@@ -54,7 +53,7 @@ include 'layout/_header.php';
                                 <label class="form-label col-md-4">Content:</label>
                                 <div class="col-md-8">
                                   
-                                    <textarea id="text_editor" class="text-editor" rows="10" cols="48" name="content"maxlength="30000" ></textarea>
+                                    <textarea id="text_editor" class="text-editor" rows="10" cols="48" name="content" maxlength="30000" ></textarea>
 
                                 </div>
                             </div>
