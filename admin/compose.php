@@ -73,7 +73,7 @@ include 'layout/_header.php';
                             <div class="form-group">
                                 <label class="form-label col-md-4">Sort Order: </label>
                                 <div class="col-md-8">
-                                    <input type="number" name="sort" class="form-control" value="0" autocomplete="off"/>
+                                    <input type="number" step="any" name="sort" class="form-control" value="0" autocomplete="off"/>
                                 </div>
                             </div>
                             <div class="form-group">

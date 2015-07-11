@@ -18,7 +18,7 @@ $notifications = $db->getNotification();
         <?php foreach($notifications as $n): ?>
         <ul class="nav navbar-brand">
             <li>
-                <a href="/blogger/post.php?id=<?= $n['blog_id']; ?>" id="notified"><?= $n['id'].". ".$n['username']; ?> commented on this thread.
+                <a href="/post.php?id=<?= $n['blog_id']; ?>" id="notified"><?= $n['id'].". ".$n['username']; ?> commented on this thread.
                     <span class="help-block"><?= $n['created_at']; ?></span>
                 </a>
             </li>
