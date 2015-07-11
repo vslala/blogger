@@ -28,6 +28,9 @@ $totalNotifications = count($notifications);
                         <a href="edit.php?id=<?= $b['id']; ?>&heading=<?= $b['heading']; ?>&sort=<?= $b['sort']; ?>" class="btn btn-warning btn-sm">edit</a> &nbsp; | &nbsp;
                     </div>                 
                     <div class="help-block small">Created At: <?= $b['created_at']; ?></div>
+                    <div class="pull-left">
+                        <div class="badge"><?= $b['sort']; ?></div>
+                    </div>                   
  
                 </div>
             </div>
