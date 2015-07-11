@@ -26,11 +26,11 @@ class DBConnect {
         return $this->db;
     }
 	
-    public function createBlog($heading, $content, $tags, $imageName = null, $imageType = null, $imageSize = null)
+    public function createBlog($heading, $content, $sort=0, $tags, $imageName = null, $imageType = null, $imageSize = null)
     {
         $tagArray = explode(' ', $tags);
-        $stmt = $this->db->prepare("INSERT INTO blogs (heading,content) VALUES (?,?)");
-        $stmt->execute([$heading,$content]);
+        $stmt = $this->db->prepare("INSERT INTO blogs (heading,content,sort) VALUES (?,?,?)");
+        $stmt->execute([$heading,$content, $sort]);
         $blogId = $this->db->lastInsertId();
         if($blogId) // if blog is inserted successfully
         {
@@ -79,7 +79,7 @@ class DBConnect {
     
     public function fetchAllBlogs()
     {
-        $stmt = $this->db->prepare("SELECT * FROM blogs ORDER BY created_at DESC");
+        $stmt = $this->db->prepare("SELECT * FROM blogs ORDER BY sort ASC");
         $stmt->execute();
         $result = $stmt->fetchAll();
         return $result;
@@ -87,7 +87,7 @@ class DBConnect {
      public function fetchAllBlogsLimit($l,$u)
     {
         $l = intval($l); $u= intval($u);
-        $stmt = $this->db->prepare("SELECT * FROM blogs ORDER BY created_at DESC LIMIT $l,$u ");
+        $stmt = $this->db->prepare("SELECT * FROM blogs ORDER BY sort ASC LIMIT $l,$u ");
         $stmt->execute();
         $result = $stmt->fetchAll();
         return $result;
@@ -107,10 +107,10 @@ class DBConnect {
         return $result;
     }
     
-    public function updateBlog($blogId, $heading, $content)
+    public function updateBlog($blogId, $heading, $content, $sort)
     {
-        $stmt = $this->db->prepare("UPDATE blogs SET heading=?, content=? WHERE id=?");
-        $stmt->execute([$heading,$content,$blogId]);
+        $stmt = $this->db->prepare("UPDATE blogs SET heading=?, content=?, sort=? WHERE id=?");
+        $stmt->execute([$heading,$content,$sort,$blogId]);
         return true;
     }
     

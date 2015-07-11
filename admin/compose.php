@@ -8,6 +8,7 @@ $scripts = ["https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js","
 //     $imageTmp  = $_FILES['file']['tmp_name'];
      $heading = $_POST['heading'];
      $content = $_POST['content'];
+     $sort = $_POST['sort'];
      $tags = $_POST['tags'];
     require_once 'php/DBConnect.php';
 
@@ -67,6 +68,12 @@ include 'layout/_header.php';
                                 <label class="form-label col-md-4">Tags: </label>
                                 <div class="col-md-8">
                                     <input type="text" name="tags" class="form-control" placeholder="ex: #science #technology etc" autocomplete="off"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label col-md-4">Sort Order: </label>
+                                <div class="col-md-8">
+                                    <input type="number" name="sort" class="form-control" value="0" autocomplete="off"/>
                                 </div>
                             </div>
                             <div class="form-group">

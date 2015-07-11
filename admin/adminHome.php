@@ -25,7 +25,7 @@ $totalNotifications = count($notifications);
                         <a href="delete.php?id=<?= $b['id']; ?>" class="btn btn-danger btn-sm">delete </a> 
                     </div> 
                     <div class="editLink pull-right small">
-                        <a href="edit.php?id=<?= $b['id']; ?>&heading=<?= $b['heading']; ?>" class="btn btn-warning btn-sm">edit</a> &nbsp; | &nbsp;
+                        <a href="edit.php?id=<?= $b['id']; ?>&heading=<?= $b['heading']; ?>&sort=<?= $b['sort']; ?>" class="btn btn-warning btn-sm">edit</a> &nbsp; | &nbsp;
                     </div>                 
                     <div class="help-block small">Created At: <?= $b['created_at']; ?></div>
  

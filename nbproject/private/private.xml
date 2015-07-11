@@ -5,6 +5,7 @@
         <group>
             <file>file:/C:/xampp/htdocs/blogger/admin/editProject.php</file>
             <file>file:/C:/xampp/htdocs/blogger/admin/js/myjs.js</file>
+            <file>file:/C:/xampp/htdocs/blogger/admin/php/DBConnect.php</file>
         </group>
     </open-files>
 </project-private>

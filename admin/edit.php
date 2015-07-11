@@ -3,12 +3,17 @@ $scripts = ["https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js","
 $base_url = "http://varunshrivastava.azurewebsites.net/";
 $blogId = null;
 $heading = null;
+$sort = 0;
 $confirmation = null;
 if(isset($_GET['id'])){
     $blogId = $_GET['id'];
     if(isset($_GET['heading']))
     {
         $heading = $_GET['heading'];
+    }
+    if(isset($_GET['sort']))
+    {
+        $sort = $_GET['sort'];
     }
 }
 require 'php/DBConnect.php';
@@ -20,7 +25,8 @@ if(isset($_POST['updateBtn']))
     $blogId = $_POST['blogId'];
     $heading = $_POST['heading'];
     $content = $_POST['content'];
-    $flag = $db->updateBlog($blogId, $heading, $content);
+    $sort = $_POST['sort'];
+    $flag = $db->updateBlog($blogId, $heading, $content, $sort);
     if($flag){
         $confirmation = "Blog has been update successfully!";
         header("Refresh: 2; url=".$base_url."admin/adminHome.php");
@@ -61,6 +67,12 @@ include 'layout/_header.php';
                                     <textarea rows="10" name="content" class="form-control" maxlength="30000" id="text_editor">
                                         <?php if(isset($content)) echo $content; else echo ''; ?>
                                     </textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label col-md-4">Sort Order:</label>
+                                <div class="col-md-8">
+                                    <input type="number" value="<?php if(isset($sort)) echo $sort; else echo ''; ?>" name="sort" class="form-control" autocomplete="off"/>
                                 </div>
                             </div>
                             <div class="form-group">
