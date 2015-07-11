@@ -40,6 +40,7 @@ $projects = $db->fetchAllProjects();
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <button data-toggle="modal" data-target="#my_project_modal" class="btn btn-default">My Projects</button>
+                <a href="docs/0203CS121043_Resume.pdf" class="btn btn-default">My Resume</a>
                 <!--<a href="#" class="btn btn-default">Resume</a>
                 <a href="#" class="btn btn-default">My Websites</a>-->
             </div>
