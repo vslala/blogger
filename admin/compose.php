@@ -13,7 +13,7 @@ $scripts = ["https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js","
     require_once 'php/DBConnect.php';
 
     $db = new DBConnect();
-    $flag = $db->createBlog($heading, $content, $tags);
+    $flag = $db->createBlog($heading, $content, $sort, $tags);
     if ($flag) {
         $confirmation = "The blog has been inserted in the database successufully!";
         // echo $confirmation;
