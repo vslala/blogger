@@ -4,8 +4,13 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/xampp/htdocs/blogger/index.php</file>
-            <file>file:/C:/xampp/htdocs/blogger/about.php</file>
+            <file>file:/C:/xampp/htdocs/blogger/admin/js/myjs.js</file>
+            <file>file:/C:/xampp/htdocs/blogger/contact.php</file>
+            <file>file:/C:/xampp/htdocs/blogger/admin/layout.php</file>
+            <file>file:/C:/xampp/htdocs/blogger/functions/layout.php</file>
             <file>file:/C:/xampp/htdocs/blogger/admin/php/DBConnect.php</file>
+            <file>file:/C:/xampp/htdocs/blogger/admin/index.php</file>
+            <file>file:/C:/xampp/htdocs/blogger/admin/php/delete.php</file>
         </group>
     </open-files>
 </project-private>

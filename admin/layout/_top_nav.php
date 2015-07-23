@@ -8,6 +8,7 @@
         <li class="<?php echo $setNotificationActive; ?>">
             <a href="notification.php">Notification<div class="badge"><?php if(isset($totalNotifications)){echo $totalNotifications;}else{echo '';} ?></div></a>  
         </li> 
+        <li class="<?= $setLayoutActive; ?>"><a href="layout.php">Layout</a></li>
         <li><a href="logout.php">Logout</a></li>
     </ul>
 </nav>

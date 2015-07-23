@@ -6,7 +6,7 @@
  */
 class DBConnect {
      private $db = NULL;
-
+//
 //     const DB_SERVER = "localhost";
 //     const DB_USER = "root";
 //     const DB_PASSWORD = "";
@@ -165,21 +165,21 @@ class DBConnect {
 //        }
 //    }
     
-    public function updateAboutMe($id,$content){
+    public function updateAboutMe($id,$content,$coverImage, $coverHeading,$coverSubHeading){
         $stmt = $this->db->prepare("SELECT * FROM about");
         $stmt->execute();
         $count = count($stmt->fetchAll());
         
         if($count<=0){
-            $stmt = $this->db->prepare("INSERT INTO about (about_me) VALUES (?)");
-            $flag = $stmt->execute([$content]);
+            $stmt = $this->db->prepare("INSERT INTO about (about_me, cover_image, cover_heading, cover_subheading) VALUES (?,?,?,?)");
+            $flag = $stmt->execute([$content, $coverImage, $coverHeading, $coverSubHeading]);
             if($flag)
                 return true;
             else
                 return false;
         } else{
-            $stmt = $this->db->prepare("UPDATE about SET about_me=? WHERE id=?");
-            $flag = $stmt->execute([$content,$id]);
+            $stmt = $this->db->prepare("UPDATE about SET about_me=?, cover_image=?, cover_heading=?, cover_subheading=? WHERE id=?");
+            $flag = $stmt->execute([$content, $coverImage, $coverHeading, $coverSubHeading,$id]);
             if($flag){
                 return true;
             }else{
@@ -302,5 +302,52 @@ class DBConnect {
             return $this->db->errorInfo();
         }
         
+    }
+    
+    public function setLayout($forPage,$coverImage, $coverHeading, $coverSubHeading){
+        $stmt = $this->db->prepare("SELECT * FROM layout WHERE for_page=?");
+        if($stmt->execute([$forPage])){
+            if(count($stmt->fetchAll()) <= 0){
+                $stmt = $this->db->prepare("INSERT INTO layout (for_page, cover_image, cover_heading, cover_subheading) VALUES (?,?,?,?)");
+                if($stmt->execute([$forPage,$coverImage,$coverHeading,$coverSubHeading])){
+                    return true;
+                }else{
+                    return false;
+                }
+            }else{
+                $stmt = $this->db->prepare("UPDATE layout SET cover_image=?, cover_heading=?, cover_subheading=? WHERE for_page=?");
+                if($stmt->execute([$coverImage,$coverHeading,$coverSubHeading,$forPage])){
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+        }
+    }
+    
+    public function getLayout($forPage){
+        $stmt = $this->db->prepare("SELECT * FROM layout WHERE for_page=?");
+        if($stmt->execute([$forPage])){
+            return $stmt->fetchAll();
+        }else{
+            return false;
+        }
+    }
+    
+    public function getAllLayouts(){
+        $stmt = $this->db->prepare("SELECT * FROM layout");
+        if($stmt->execute()){
+            return $stmt->fetchAll();
+        }else{
+            return false;
+        }
+    }
+    
+    public function deleteLayout($for){
+        $stmt = $this->db->prepare("DELETE FROM layout WHERE for_page=?");
+        if($stmt->execute([$for]))
+            return true;
+        else
+            return false;
     }
 }

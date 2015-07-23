@@ -1,31 +1,33 @@
 <?php 
 
 $title = "About";
-$bgImageUrl = null;
+$cover_image_url = 'img/about-bg.jpg';
+$cover_heading = "About";
+$cover_subheading = "This is what I am";
+$setAboutActive = 'active';
+
 include 'layout/_header.php';
 include 'layout/_top_nav.php';
 $i=0;
 require_once 'admin/php/DBConnect.php';
 $db = new DBConnect();
 $about = $db->selectAllFromAbout();
+
+if(isset($about[0]['cover_image']) && $about[0]['cover_image'] !== '')
+    $cover_image_url = $about[0]['cover_image'];
+
+if(isset($about[0]['cover_heading']) && $about[0]['cover_heading'] !== '')
+    $cover_heading = $about[0]['cover_heading'];
+
+if(isset($about[0]['cover_subheading']) && $about[0]['cover_subheading'] !== '')
+    $cover_subheading = $about[0]['cover_subheading'];
+
 $projects = $db->fetchAllProjects();
 ?>
 
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url(<?php if(isset($bgImageUrl)){echo $bgImageUrl;}else{ echo 'img/about-bg.jpg'; }?>)">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="page-heading">
-                        <h1>About Me</h1>
-                        <hr class="small">
-                        <span class="subheading">This is what I do.</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+<?php include 'layout/_about_cover.php'; ?>
 
     <!-- Main Content -->
     <!--<div class="container">-->

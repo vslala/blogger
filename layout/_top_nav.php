@@ -16,16 +16,16 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li>
+                    <li class="<?= $setHomeActive; ?>">
                         <a href="index.php">Home</a>
                     </li>
-                    <li>
+                    <li class="<?= $setAboutActive; ?>">
                         <a href="about.php">About</a>
                     </li>
 <!--                    <li>
                         <a href="post.php">Post</a>
                     </li>-->
-                    <li>
+                    <li class="<?= $setContactActive; ?>">
                         <a href="contact.php">Contact</a>
                     </li>
                 </ul>
