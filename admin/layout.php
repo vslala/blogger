@@ -14,7 +14,7 @@ if(isset($_POST['submitBtn'])){
     if($flag)
         $message = "Layout set Successfully!";
     else
-        $error = "There was some error";
+        $error = "There was some error: " . $flag;
 }
 $layouts = $db->getAllLayouts();
 
@@ -36,6 +36,9 @@ $layouts = $db->getAllLayouts();
         <div class="col-md-8">
             
             <div class="layout_form">
+                <?php if(isset($error)): ?>
+                <span class="alert alert-danger" style="font-family: tahoma, sans-serif; font-weight: bolder;"><?= $error; ?></span>
+                <?php endif; ?>
                 <h3>Add or Update Layout</h3>
                 <form class="form-vertical" action="layout.php" method="post">
                     <div class="form-group">

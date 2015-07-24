@@ -317,7 +317,7 @@ class DBConnect {
                 if($stmt->execute([$forPage,$coverImage,$coverHeading,$coverSubHeading])){
                     return true;
                 }else{
-                    return false;
+                    return $this->db->errorInfo();
                 }
             }else{
                 $stmt = $this->db->prepare("UPDATE layout SET cover_image=?, cover_heading=?, cover_subheading=? WHERE for_page=?");
