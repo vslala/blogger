@@ -26,11 +26,11 @@ class DBConnect {
         return $this->db;
     }
 	
-    public function createBlog($heading, $content, $sort=0, $tags, $imageName = null, $imageType = null, $imageSize = null)
+    public function createBlog($heading, $content, $sort=0, $tags, $coverImage, $imageName = null, $imageType = null, $imageSize = null)
     {
         $tagArray = explode(' ', $tags);
-        $stmt = $this->db->prepare("INSERT INTO blogs (heading,content,sort) VALUES (?,?,?)");
-        $stmt->execute([$heading,$content, $sort]);
+        $stmt = $this->db->prepare("INSERT INTO blogs (heading,content,sort,cover_image) VALUES (?,?,?,?)");
+        $stmt->execute([$heading,$content, $sort, $coverImage]);
         $blogId = $this->db->lastInsertId();
         if($blogId) // if blog is inserted successfully
         {
@@ -107,10 +107,17 @@ class DBConnect {
         return $result;
     }
     
-    public function updateBlog($blogId, $heading, $content, $sort)
+    public function getBlogCoverImageByBlogId($id){
+        $stmt = $this->db->prepare("SELECT cover_image FROM blogs WHERE id=?");
+        $stmt->execute([$id]);
+        $result = $stmt->fetchColumn();
+        return $result;
+    }
+    
+    public function updateBlog($blogId, $heading, $content, $sort, $coverImage)
     {
-        $stmt = $this->db->prepare("UPDATE blogs SET heading=?, content=?, sort=? WHERE id=?");
-        $stmt->execute([$heading,$content,$sort,$blogId]);
+        $stmt = $this->db->prepare("UPDATE blogs SET heading=?, content=?, sort=?, cover_image=? WHERE id=?");
+        $stmt->execute([$heading,$content,$sort,$coverImage,$blogId]);
         return true;
     }
     

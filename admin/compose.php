@@ -8,12 +8,13 @@ $scripts = ["https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js","
 //     $imageTmp  = $_FILES['file']['tmp_name'];
      $heading = $_POST['heading'];
      $content = $_POST['content'];
+     $coverImage = $_POST['coverImage'];
      $sort = $_POST['sort'];
      $tags = $_POST['tags'];
     require_once 'php/DBConnect.php';
 
     $db = new DBConnect();
-    $flag = $db->createBlog($heading, $content, $sort, $tags);
+    $flag = $db->createBlog($heading, $content, $sort, $tags, $coverImage);
     if ($flag) {
         $confirmation = "The blog has been inserted in the database successufully!";
         // echo $confirmation;
@@ -68,6 +69,12 @@ include 'layout/_header.php';
                                 <label class="form-label col-md-4">Tags: </label>
                                 <div class="col-md-8">
                                     <input type="text" name="tags" class="form-control" placeholder="ex: #science #technology etc" autocomplete="off"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label col-md-4">Cover Image Url: </label>
+                                <div class="col-md-8">
+                                    <input type="text" name="coverImage" class="form-control" placeholder="Enter image url" autocomplete="off"/>
                                 </div>
                             </div>
                             <div class="form-group">

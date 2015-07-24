@@ -19,6 +19,7 @@ if(isset($_GET['id'])){
 require 'php/DBConnect.php';
 $db = new DBConnect();
 $content = $db->getblogContentByBlogId($blogId);
+$coverImage = $db->getBlogCoverImageByBlogId($blogId);
 
 if(isset($_POST['updateBtn']))
 {
@@ -26,7 +27,8 @@ if(isset($_POST['updateBtn']))
     $heading = $_POST['heading'];
     $content = $_POST['content'];
     $sort = $_POST['sort'];
-    $flag = $db->updateBlog($blogId, $heading, $content, $sort);
+    $coverImage = $_POST['coverImage'];
+    $flag = $db->updateBlog($blogId, $heading, $content, $sort, $coverImage);
     if($flag){
         $confirmation = "Blog has been update successfully!";
         header("Refresh: 2; url=".$base_url."admin/adminHome.php");
@@ -67,6 +69,12 @@ include 'layout/_header.php';
                                     <textarea rows="10" name="content" class="form-control" maxlength="30000" id="text_editor">
                                         <?php if(isset($content)) echo $content; else echo ''; ?>
                                     </textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label col-md-4">Cover Image Url:</label>
+                                <div class="col-md-8">
+                                    <input type="text" value="<?php if(isset($coverImage)) echo $coverImage; else echo ''; ?>" name="coverImage" class="form-control" maxlength="500" autocomplete="off"/>
                                 </div>
                             </div>
                             <div class="form-group">

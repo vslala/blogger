@@ -17,6 +17,9 @@ $title = $blog[0]['heading'];
 $cover_image_url = 'img/post-bg.jpg';
 $cover_heading = $blog[0]['heading'];
 $cover_subheading = "Posted by <a href='#'>Varun Shrivastava</a> ".$blog[0]['created_at'];
+if(isset($blog[0]['cover_image']) && $blog[0]['cover_image'] !== ''){
+    $cover_image_url = $blog[0]['cover_image'];
+}
 include 'layout/_header.php';
 include 'layout/_top_nav.php';
 ?>
