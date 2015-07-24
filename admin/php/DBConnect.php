@@ -324,7 +324,7 @@ class DBConnect {
                 if($stmt->execute([$coverImage,$coverHeading,$coverSubHeading,$forPage])){
                     return true;
                 }else{
-                    return false;
+                    return $this->db->errorInfo();
                 }
             }
         }
