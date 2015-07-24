@@ -29,7 +29,7 @@ class DBConnect {
     public function createBlog($heading, $content, $sort=0, $tags, $coverImage)
     {
         $tagArray = explode(' ', $tags);
-        $stmt = $this->db->prepare("INSERT INTO blogs (heading,content,sort,cover_image) VALUES (?,?,?,?)");
+        $stmt = $this->db->prepare("INSERT INTO blogs (`heading`,`content`,`sort`,`cover_image`) VALUES (?,?,?,?)");
         if ($stmt->execute([$heading, $content, $sort, $coverImage])) {
             $blogId = $this->db->lastInsertId();
             if ($blogId) { // if blog is inserted successfully
@@ -178,7 +178,7 @@ class DBConnect {
         $count = count($stmt->fetchAll());
         
         if($count<=0){
-            $stmt = $this->db->prepare("INSERT INTO about (about_me, cover_image, cover_heading, cover_subheading) VALUES (?,?,?,?)");
+            $stmt = $this->db->prepare("INSERT INTO about (`about_me`, `cover_image`, `cover_heading`, `cover_subheading`) VALUES (?,?,?,?)");
             $flag = $stmt->execute([$content, $coverImage, $coverHeading, $coverSubHeading]);
             if($flag)
                 return true;
@@ -196,7 +196,7 @@ class DBConnect {
     }
     
     public function insertComment($blogID, $comment,$username){
-        $stmt = $this->db->prepare("INSERT INTO comments (blog_id,comment,username) VALUES (?,?,?)");
+        $stmt = $this->db->prepare("INSERT INTO comments (`blog_id`,`comment`,`username`) VALUES (?,?,?)");
         if($stmt->execute([$blogID,$comment,$username])){
             return true;
         }else{
@@ -214,7 +214,7 @@ class DBConnect {
     }
     
     public function setNotificationForComment($blogID,$username){
-        $stmt = $this->db->prepare("INSERT INTO notifications (blog_id, username) VALUES(?,?)");
+        $stmt = $this->db->prepare("INSERT INTO notifications (`blog_id`, `username`) VALUES(?,?)");
         if($stmt->execute([$blogID, $username]))
                 return true;
         else
@@ -243,7 +243,7 @@ class DBConnect {
     }
 
     public function addProject($title, $link, $description){
-        $stmt = $this->db->prepare("INSERT INTO projects (title,link,description) VALUES (?,?,?)");
+        $stmt = $this->db->prepare("INSERT INTO projects (`title`,`link`,`description`) VALUES (?,?,?)");
         $flag = $stmt->execute([$title,$link,$description]);
         if($flag){
             return true;
@@ -315,7 +315,7 @@ class DBConnect {
         $stmt = $this->db->prepare("SELECT * FROM layout WHERE for_page=?");
         if($stmt->execute([$forPage])){
             if(count($stmt->fetchAll()) <= 0){
-                $stmt = $this->db->prepare("INSERT INTO layout (for_page, cover_image, cover_heading, cover_subheading) VALUES (?,?,?,?)");
+                $stmt = $this->db->prepare("INSERT INTO layout (`for_page`, `cover_image`, `cover_heading`, `cover_subheading`) VALUES (?,?,?,?)");
                 if($stmt->execute([$forPage,$coverImage,$coverHeading,$coverSubHeading])){
                     return true;
                 }else{
