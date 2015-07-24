@@ -30,26 +30,26 @@ class DBConnect {
     {
         $tagArray = explode(' ', $tags);
         $stmt = $this->db->prepare("INSERT INTO blogs (heading,content,sort,cover_image) VALUES (?,?,?,?)");
-        $stmt->execute([$heading,$content, $sort, $coverImage]);
-        $blogId = $this->db->lastInsertId();
-        if($blogId) // if blog is inserted successfully
-        {
-            $blogFlag = true;
-            if (!empty($tagArray)) {
-                for ($i = 0; $i < count($tagArray); $i++) {
-                    $stmt = $this->db->prepare("INSERT INTO tags (blog_id, tag) VALUES (?,?)");
-                    $stmt->execute([$blogId, $tagArray[$i]]);
+        if ($stmt->execute([$heading, $content, $sort, $coverImage])) {
+            $blogId = $this->db->lastInsertId();
+            if ($blogId) { // if blog is inserted successfully
+                $blogFlag = true;
+                if (!empty($tagArray)) {
+                    for ($i = 0; $i < count($tagArray); $i++) {
+                        $stmt = $this->db->prepare("INSERT INTO tags (blog_id, tag) VALUES (?,?)");
+                        $stmt->execute([$blogId, $tagArray[$i]]);
+                    }
                 }
-            }
-            
+
 //            $flag = $this->insertBlogImage($blogId, $imageName, $imageType, $imageSize);
-            
+            } else {
+                return $this->db->errorInfo();
+            }
+
+            return $blogFlag;
         } else {
             return $this->db->errorInfo();
         }
-        
-        return $blogFlag;
-        
     }
     
 //    public function insertBlogImage($blogId, $imageName, $imageType, $imageSize)
