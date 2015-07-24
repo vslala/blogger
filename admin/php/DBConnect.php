@@ -40,8 +40,6 @@ class DBConnect {
                         $stmt->execute([$blogId, $tagArray[$i]]);
                     }
                 }
-
-//            $flag = $this->insertBlogImage($blogId, $imageName, $imageType, $imageSize);
             } else {
                 return $this->db->errorInfo();
             }
