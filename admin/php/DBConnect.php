@@ -6,7 +6,7 @@
  */
 class DBConnect {
      private $db = NULL;
-//
+////
 //     const DB_SERVER = "localhost";
 //     const DB_USER = "root";
 //     const DB_PASSWORD = "";
@@ -26,7 +26,7 @@ class DBConnect {
         return $this->db;
     }
 	
-    public function createBlog($heading, $content, $sort=0, $tags, $coverImage, $imageName = null, $imageType = null, $imageSize = null)
+    public function createBlog($heading, $content, $sort=0, $tags, $coverImage)
     {
         $tagArray = explode(' ', $tags);
         $stmt = $this->db->prepare("INSERT INTO blogs (heading,content,sort,cover_image) VALUES (?,?,?,?)");
@@ -45,7 +45,7 @@ class DBConnect {
 //            $flag = $this->insertBlogImage($blogId, $imageName, $imageType, $imageSize);
             
         } else {
-            return false;
+            return $this->db->errorInfo();
         }
         
         return $blogFlag;

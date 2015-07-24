@@ -19,6 +19,8 @@ $scripts = ["https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js","
         $confirmation = "The blog has been inserted in the database successufully!";
         // echo $confirmation;
 //        move_uploaded_file($imageTmp, "../images/". basename($imageName));
+    }else{
+        echo $flag;
     }
 }
 
