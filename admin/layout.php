@@ -5,17 +5,7 @@ $setLayoutActive='active';
 
 require_once 'php/DBConnect.php'; 
 $db = new DBConnect();
-if(isset($_POST['submitBtn'])){
-    $forPage = $_POST['forPage'];
-    $coverImage = $_POST['coverImage'];
-    $coverHeading = $_POST['coverHeading'];
-    $coverSubHeading = $_POST['coverSubHeading'];
-    $flag = $db->setLayout($forPage, $coverImage, $coverHeading, $coverSubHeading);
-    if($flag)
-        $message = "Layout set Successfully!";
-    else
-        $error = "There was some error: " . $flag;
-}
+
 $layouts = $db->getAllLayouts();
 
 ?>
@@ -36,11 +26,16 @@ $layouts = $db->getAllLayouts();
         <div class="col-md-8">
             
             <div class="layout_form">
-                <?php if(isset($error)): ?>
-                <span class="alert alert-danger" style="font-family: tahoma, sans-serif; font-weight: bolder;"><?= $error; ?></span>
-                <?php endif; ?>
+                
+                <?php session_start(); if(isset($_SESSION['error_message'])): ?>
+                <span class="alert alert-danger" style="font-family: tahoma, sans-serif; font-weight: bolder;"><?= $_SESSION['error_message']; ?></span>
+                <?php unset($_SESSION['error_message']); endif; ?>
+                <?php if(isset($_SESSION['success_message'])): ?>
+                <span class="alert alert-success" style="font-family: tahoma, sans-serif; font-weight: bolder;"><?= $_SESSION['success_message']; ?></span>
+                <?php unset($_SESSION['success_message']); endif; ?>
+                
                 <h3>Add or Update Layout</h3>
-                <form class="form-vertical" action="layout.php" method="post">
+                <form class="form-vertical" action="php/layoutProcess.php" method="post">
                     <div class="form-group">
                         <input class="form-control" placeholder="Layout For Page?" name="forPage" id="for_page_input"/>
                         <div class="help-block" id="show_layout_pages">
