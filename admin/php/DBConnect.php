@@ -6,13 +6,13 @@
  */
 class DBConnect {
      private $db = NULL;
-////
-//     const DB_SERVER = "localhost";
-//     const DB_USER = "root";
-//     const DB_PASSWORD = "";
-     const DB_SERVER = "ap-cdbr-azure-east-c.cloudapp.net";
-     const DB_USER = "b9ebb4837a6198";
-     const DB_PASSWORD = "09653ffb";
+//
+     const DB_SERVER = "localhost";
+     const DB_USER = "root";
+     const DB_PASSWORD = "";
+//     const DB_SERVER = "ap-cdbr-azure-east-c.cloudapp.net";
+//     const DB_USER = "b9ebb4837a6198";
+//     const DB_PASSWORD = "09653ffb";
     const DB_NAME = "bloggerdb";
 
     public function __construct() {

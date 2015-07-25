@@ -49,7 +49,51 @@ $(document).ready(function(){
                     console.log(xhr.responseText);
                 }
             })
-        })
+        });
+        
+        $('#layout_form').submit(function(event){
+            event.preventDefault();
+            
+            var url = $(this).attr('action');
+            var data = $(this).serialize();
+            var dataArray = $(this).serializeArray();
+            var type = "POST";
+            var new_div = $('<div></div>');
+            var layout_form_div = $('#layout_form_div');
+            var available_layouts_list = $('#available_layouts_list');
+            layout_form_div.prepend(new_div);
+            
+            $.ajax({
+                url: url,
+                data: data,
+                type: type,
+                success: function(response){
+                    if(response == true){        
+                        var html_string = '<span style="font-family: tahoma, sans-serif; font-weight: bolder; color: green;" class="alert alert-success">'+
+                                'Layout Set Successful'+
+                                '</span>';
+                        new_div.html(html_string);
+                        console.log(dataArray);
+                        var html_string = '<li>' +
+                        '<span class="pull-right"><a href="php/delete.php?for=' +dataArray[0].value+'" id="delete_layout_link">delete</a></span>' +
+                        '<a href="#" id="for_page_list_element">'+dataArray[0].value+'</a>' +
+                        '<input type="hidden" value="'+dataArray[1].value+'">' +
+                        '<input type="hidden" value="'+dataArray[2].value+'">' +
+                        '<input type="hidden" value="'+dataArray[3].value+'">' +
+                        '</li>';
+                        available_layouts_list.append(html_string);
+                    }else{
+                        var html_string = '<span style="font-family: tahoma, sans-serif; font-weight: bolder; color: crimson;" class="alert alert-danger">'+
+                                'There was some error setting the layout'+
+                                '</span>';
+                        new_div.html(html_string);
+                    }
+                },
+                error: function(xhr, status, message){
+                    console.log("Error: "+xhr.responseText);
+                }
+            });
+        });
 
 	// $("#blog_compose_form").submit(function(event){
 	// 	event.preventDefault();

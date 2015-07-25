@@ -25,7 +25,7 @@ $layouts = $db->getAllLayouts();
         <div class="col-md-2"></div>
         <div class="col-md-8">
             
-            <div class="layout_form">
+            <div class="layout_form" id="layout_form_div">
                 
                 <?php session_start(); if(isset($_SESSION['error_message'])): ?>
                 <span class="alert alert-danger" style="font-family: tahoma, sans-serif; font-weight: bolder;"><?= $_SESSION['error_message']; ?></span>
@@ -35,12 +35,12 @@ $layouts = $db->getAllLayouts();
                 <?php unset($_SESSION['success_message']); endif; ?>
                 
                 <h3>Add or Update Layout</h3>
-                <form class="form-vertical" action="php/layoutProcess.php" method="post">
+                <form class="form-vertical" action="php/layoutProcess.php" method="post" id="layout_form">
                     <div class="form-group">
                         <input class="form-control" placeholder="Layout For Page?" name="forPage" id="for_page_input"/>
                         <div class="help-block" id="show_layout_pages">
                             <b>Available Layouts</b>
-                            <ul>
+                            <ul id="available_layouts_list">
                                 <?php foreach ($layouts as $l): ?>
                                     <li>
                                         <span class="pull-right"><a href="php/delete.php?for=<?= $l['for_page']; ?>" id="delete_layout_link">delete</a></span>
