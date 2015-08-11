@@ -1,4 +1,5 @@
 <?php
+$uri = $_SERVER['REQUEST_URI'];
 session_start();
 
 $id = $_GET['id'];
@@ -39,8 +40,13 @@ include 'layout/_top_nav.php';
         </div>
         <hr>
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="col-lg-6 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="pull-left box">Total Blog Views: <?= $blog[0]['views']; ?></div>
+            </div>
+            <div class="col-lg-4 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="pull-left box">
+                    <div class="fb-like" data-href="http://varunshrivastava.azurewebsites.net<?= $uri; ?>" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+                </div>
             </div>
         </div>
         <hr>
