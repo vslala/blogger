@@ -10,6 +10,9 @@
         <meta name="author" content="">
 
         <title><?php echo $title; ?></title>
+        
+        <!-- Google Plus Like Button -->
+        <script src="https://apis.google.com/js/platform.js" async defer>
 
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">

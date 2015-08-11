@@ -50,11 +50,13 @@ include 'layout/_top_nav.php';
                          data-show-faces="true" 
                          data-share="true">
                     </div>
+                    <g:plusone></g:plusone>
                 </div>
             </div>
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="pull-left box">
                     <div class="fb-comments" data-href="http://varunshrivastava.azurewebsites.net<?= $uri; ?>" data-numposts="5"></div>
+                    
                 </div>
             </div>
             
