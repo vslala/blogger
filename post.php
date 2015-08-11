@@ -45,7 +45,13 @@ include 'layout/_top_nav.php';
             </div>
             <div class="col-lg-4 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="pull-left box">
-                    <div class="fb-like" data-href="http://varunshrivastava.azurewebsites.net<?= $uri; ?>" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+                    <div class="fb-like" 
+                         data-href="http://varunshrivastava.azurewebsites.net<?= $uri; ?>" 
+                         data-layout="box_count" 
+                         data-action="like" 
+                         data-show-faces="true" 
+                         data-share="true">
+                    </div>
                 </div>
             </div>
         </div>
